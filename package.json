@@ -1,5 +1,4 @@
 {
-  "publish": null
   "name": "girison-token-print-studio",
   "version": "1.0.1",
   "private": true,
@@ -23,6 +22,7 @@
   "build": {
     "appId": "com.girisontechnologies.tokenprintstudio",
     "productName": "Girison Token Print Studio",
+    "publish": null,
     "copyright": "Copyright \u00a9 2026 Girison Technologies. Developed by Arul Prakasham.",
     "directories": {
       "output": "dist"
