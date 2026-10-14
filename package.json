@@ -1,0 +1,56 @@
+{
+  "name": "girison-token-print-studio",
+  "version": "1.0.1",
+  "private": true,
+  "description": "Token printing and sheet layout desktop application",
+  "author": "Girison Technologies | Arul Prakasham, Senior Software Engineer and Designer",
+  "main": "main.js",
+  "scripts": {
+    "postinstall": "node scripts/prepare.js",
+    "start": "electron .",
+    "build:win64": "electron-builder --win nsis --x64",
+    "build:win32": "electron-builder --win nsis --ia32",
+    "build:both": "electron-builder --win nsis --x64 --ia32"
+  },
+  "dependencies": {
+    "xlsx": "0.18.5"
+  },
+  "devDependencies": {
+    "electron": "22.3.27",
+    "electron-builder": "24.13.3"
+  },
+  "build": {
+    "appId": "com.girisontechnologies.tokenprintstudio",
+    "productName": "Girison Token Print Studio",
+    "copyright": "Copyright \u00a9 2026 Girison Technologies. Developed by Arul Prakasham.",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "app/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ],
+      "artifactName": "Girison-Token-Print-Studio-${version}-${arch}-Setup.exe"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Girison Token Print Studio",
+      "uninstallDisplayName": "Girison Token Print Studio"
+    }
+  }
+}
